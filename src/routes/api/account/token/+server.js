@@ -8,7 +8,7 @@ export async function POST({ request }) {
     const data = await request.json();
     db = await getDb();
 
-    if (!data || !data.token || !data.scope || !data.username) return returnSuccess('Data not found.');
+    if (!data || !data.token || !data.scope) return returnSuccess('Data not found.');
     
     var match = await db.all('SELECT * FROM token WHERE token = ? AND scope = ?',[
         data.token,
