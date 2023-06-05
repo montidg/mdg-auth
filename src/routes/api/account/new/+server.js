@@ -1,4 +1,4 @@
-import { getDb, returnSuccess } from '$lib/db.js';
+import { getDb, returnSuccess, safeName } from '$lib/db.js';
 import { hash } from 'bcrypt'
 let db;
 
@@ -11,6 +11,7 @@ export async function POST({ request, getClientAddress }) {
 
     let {username, password, password2, email} = data;
     if (username.length > 32) return returnSuccess('Username too long.');
+    if (username != safeName(username)) return returnSuccess('Username contains invalid characters.');
 
     if (password != password2) return returnSuccess('Passwords don\'t match.');
 
