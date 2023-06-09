@@ -1,5 +1,5 @@
 <script>
-    import Form from '$lib/Form.svelte';
+    import Form from 'mdg-slfe/form';
 
     /** @type {import('./$types').PageData} */    
     export let data = {};

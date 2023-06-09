@@ -1,6 +1,6 @@
 <script>
-    import Form from '$lib/Form.svelte';
-    import Button from '$lib/Button.svelte';
+    import Form from 'mdg-slfe/form';
+    import Button from 'mdg-slfe/button';
    
     /** @type {import('./$types').PageData} */    
     export let data = {};

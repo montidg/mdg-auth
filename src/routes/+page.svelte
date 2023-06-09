@@ -17,7 +17,7 @@
 </style>
 
 <script>
-    import Button from '$lib/Button.svelte';
+    import Button from 'mdg-slfe/button';
 </script>
 
 <div class='wrapper'>
