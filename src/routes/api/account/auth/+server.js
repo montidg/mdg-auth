@@ -1,10 +1,10 @@
-import { getDb, returnSuccess } from '$lib/db.js';
+import { getDb, returnSuccess, getToken } from '$lib/db.js';
 import { compare } from 'bcrypt'
 import { randomBytes } from 'node:crypto';
 let db;
 
 /** @type {import('./$types').RequestHandler} */
-export async function POST({ request, cookies, url }) {
+export async function POST({ request, cookies, url, getClientAddress }) {
     const data = await request.json();
     db = await getDb();
 

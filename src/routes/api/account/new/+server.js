@@ -1,9 +1,12 @@
-import { getDb, returnSuccess, safeName } from '$lib/db.js';
+import { getDb, returnSuccess, safeName, getToken } from '$lib/db.js';
 import { hash } from 'bcrypt'
 let db;
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request, getClientAddress }) {
+    let status = getToken(getClientAddress());
+    if (!status) return returnSuccess('Captcha has already been used.')
+
     const data = await request.json();
     db = await getDb();
 

@@ -11,6 +11,20 @@
         overflow-y: auto;
     }
     
+    :global(input[type=submit]) {
+        border: none;
+        background: var(--dark-2);
+        padding: 5px;
+        text-align: center;
+    }
+
+    :global(form) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
     :global(:root) {
         --dark-1: #2b2f36;
         --dark-2: #d8d8d8;

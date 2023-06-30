@@ -1,7 +1,7 @@
 <script>
     import Form from 'mdg-slfe/form';
     import Button from 'mdg-slfe/button';
-   
+
     /** @type {import('./$types').PageData} */    
     export let data = {};
 </script>
@@ -16,7 +16,7 @@
 
 <h1>Log in</h1>
 
-<Button href='/account/new?scope={data.data}'>
+<Button href='/account/captcha/new'>
     Don't have an account?
 </Button>
 

@@ -27,7 +27,7 @@
         When an account is configured here, it is available globally throughout all services opting into the API.
     </p>
     <div class='button-wrapper'>
-        <Button href='/account/new'>
+        <Button href='/account/captcha/new'>
             Register
         </Button>
     </div>

@@ -2,6 +2,7 @@ import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
 
 let db; 
+let tokens = {};
 
 let getDb = async () => {
     if (!db) {
@@ -22,8 +23,20 @@ let safeName = function (text) {
     return text.replaceAll(/[^A-Za-z0-9\-\_]/g, '');
 }
 
+let setToken = (ip,tok) => {
+    tokens[ip] = tok; 
+}
+
+let getToken = (ip) => {
+    let tok = tokens[ip];
+    tokens[ip] = false;
+    return tok;
+}
+
 export {
     getDb,
     returnSuccess,
-    safeName
+    safeName,
+    setToken,
+    getToken
 };

@@ -1,6 +1,6 @@
 <script>
     import Form from 'mdg-slfe/form';
-
+    
     /** @type {import('./$types').PageData} */    
     export let data = {};
 </script>
